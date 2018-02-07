@@ -1,0 +1,49 @@
+diff --git a/tutorials/MapWithMarker/app/build.gradle b/tutorials/MapWithMarker/app/build.gradle
+index 47bde58..290d655 100644
+--- a/tutorials/MapWithMarker/app/build.gradle
++++ b/tutorials/MapWithMarker/app/build.gradle
+@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
+ 
+ android {
+     compileSdkVersion 24
+-    buildToolsVersion "23.0.3"
++    buildToolsVersion '26.0.2'
+     defaultConfig {
+         applicationId "com.example.mapwithmarker"
+         minSdkVersion 15
+diff --git a/tutorials/MapWithMarker/build.gradle b/tutorials/MapWithMarker/build.gradle
+index c20bca1..a47fa4b 100644
+--- a/tutorials/MapWithMarker/build.gradle
++++ b/tutorials/MapWithMarker/build.gradle
+@@ -5,7 +5,7 @@ buildscript {
+         jcenter()
+     }
+     dependencies {
+-        classpath 'com.android.tools.build:gradle:2.2.2'
++        classpath 'com.android.tools.build:gradle:3.0.1'
+ 
+         // NOTE: Do not place your application dependencies here; they belong
+         // in the individual module build.gradle files
+diff --git a/tutorials/MapWithMarker/gradle.properties b/tutorials/MapWithMarker/gradle.properties
+index c61a664..b763273 100644
+--- a/tutorials/MapWithMarker/gradle.properties
++++ b/tutorials/MapWithMarker/gradle.properties
+@@ -19,4 +19,4 @@ org.gradle.jvmargs=-Xmx1536m
+ # Replace  the value below with your own Google API key for Android app.
+ # You can get an API key by clicking "Get a Key" on the Google Maps Android API developer's site.
+ # https://developers.google.com/maps/documentation/android-api/start
+-GOOGLE_MAPS_API_KEY=AIzaSyDqvjPj18uoo4DgyFEey0dCMhV2UQhmkAI
++GOOGLE_MAPS_API_KEY=AIzaSyBgNJYX3zCAEkPL3ficMI8Hhti8o0noEdQ
+diff --git a/tutorials/MapWithMarker/gradle/wrapper/gradle-wrapper.properties b/tutorials/MapWithMarker/gradle/wrapper/gradle-wrapper.properties
+index 04e285f..10ea8db 100644
+--- a/tutorials/MapWithMarker/gradle/wrapper/gradle-wrapper.properties
++++ b/tutorials/MapWithMarker/gradle/wrapper/gradle-wrapper.properties
+@@ -1,6 +1,6 @@
+-#Mon Dec 28 10:00:20 PST 2015
++#Wed Feb 07 17:12:40 EST 2018
+ distributionBase=GRADLE_USER_HOME
+ distributionPath=wrapper/dists
+ zipStoreBase=GRADLE_USER_HOME
+ zipStorePath=wrapper/dists
+-distributionUrl=https\://services.gradle.org/distributions/gradle-2.14.1-all.zip
++distributionUrl=https\://services.gradle.org/distributions/gradle-4.1-all.zip
