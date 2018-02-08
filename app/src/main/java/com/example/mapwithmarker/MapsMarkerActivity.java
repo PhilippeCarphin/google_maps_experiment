@@ -48,17 +48,20 @@ public class MapsMarkerActivity extends AppCompatActivity
         LatLng montreal = new LatLng(45.5017, -73.5673);
         double dist = 0.3;
         int N_POINTS = 30;
-        LatLng markers[] = new LatLng[N_POINTS];
+        MarkerOptions markerOptions[] = new MarkerOptions[N_POINTS];
         for(int i = 0; i < N_POINTS; ++i){
             double lat = montreal.latitude + Math.cos(i * (2 * 3.1415 / N_POINTS)) * dist;
             double lng = montreal.longitude + Math.sin(i * (2 * 3.1415 / N_POINTS)) * dist;
-            markers[i] = new LatLng(lat,lng);
+            LatLng coord = new LatLng(lat,lng);
+            markerOptions[i] = new MarkerOptions()
+                    .position(coord)
+                    .title("Wifi Hotspot " + String.valueOf(i));
         }
 
         // "I" will iterate through this list and put markers on the googleMap for each object in
         // list that I would have received from some other module.
-        for(LatLng marker : markers){
-            googleMap.addMarker(new MarkerOptions().position(marker).title("Thingy"));
+        for(MarkerOptions mo : markerOptions){
+            googleMap.addMarker(mo);
         }
 
         googleMap.addMarker(new MarkerOptions().position(sydney)
