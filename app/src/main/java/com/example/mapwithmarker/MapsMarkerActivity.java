@@ -20,6 +20,9 @@ public class MapsMarkerActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Retrieve the content view that renders the map.
+        // This seems to make a link with the class the xml file that controls layout.
+        // It looks like said view will render the map.
+        // To me this seems like we're setting the parent of this class.
         setContentView(R.layout.activity_maps);
         // Get the SupportMapFragment and request notification
         // when the map is ready to be used.
@@ -42,8 +45,12 @@ public class MapsMarkerActivity extends AppCompatActivity
         // Add a marker in Sydney, Australia,
         // and move the map's camera to the same location.
         LatLng sydney = new LatLng(-33.852, 151.211);
+        LatLng montreal = new LatLng(45.5017, -73.5673);
         googleMap.addMarker(new MarkerOptions().position(sydney)
                 .title("Marker in Sydney"));
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+
+        googleMap.addMarker(new MarkerOptions().position(montreal)
+                .title("Greatest city on Earth"));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(montreal));
     }
 }
