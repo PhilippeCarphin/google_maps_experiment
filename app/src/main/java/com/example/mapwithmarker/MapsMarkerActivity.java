@@ -1,5 +1,5 @@
 package com.example.mapwithmarker;
-
+import java.lang.Math;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
@@ -42,10 +42,25 @@ public class MapsMarkerActivity extends AppCompatActivity
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        // Add a marker in Sydney, Australia,
-        // and move the map's camera to the same location.
+
+        // This is meant to create a list of LatLng objects that would maybe be passed to "me"
         LatLng sydney = new LatLng(-33.852, 151.211);
         LatLng montreal = new LatLng(45.5017, -73.5673);
+        double dist = 0.3;
+        int N_POINTS = 30;
+        LatLng markers[] = new LatLng[N_POINTS];
+        for(int i = 0; i < N_POINTS; ++i){
+            double lat = montreal.latitude + Math.cos(i * (2 * 3.1415 / N_POINTS)) * dist;
+            double lng = montreal.longitude + Math.sin(i * (2 * 3.1415 / N_POINTS)) * dist;
+            markers[i] = new LatLng(lat,lng);
+        }
+
+        // "I" will iterate through this list and put markers on the googleMap for each object in
+        // list that I would have received from some other module.
+        for(LatLng marker : markers){
+            googleMap.addMarker(new MarkerOptions().position(marker).title("Thingy"));
+        }
+
         googleMap.addMarker(new MarkerOptions().position(sydney)
                 .title("Marker in Sydney"));
 
